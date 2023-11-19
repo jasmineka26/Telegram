@@ -1,11 +1,9 @@
 import React from "react";
 import "./App.css";
 import SortTab from "./components/SortTab";
-import Profile from "./components/profile"; 
+import MiddleBar from "./components/MiddleBar";
 
-interface AppProps {
-  isSelect: boolean;
-}
+interface AppProps {}
 
 interface AppState {}
 
@@ -17,8 +15,10 @@ class App extends React.Component<AppProps, AppState> {
         <div className="flex flex-col items-center bg-yellow-600 h-screen ">
           <SortTab />
         </div>
-        <div className="text-white">
-          <Profile />
+        <div className="flex flex-col bg-gray-800 w-[35%] p-4">
+          <div>
+            <MiddleBar />
+          </div>
         </div>
       </div>
     );
