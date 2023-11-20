@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React from "react";
+import SortTabElement, { SortTabElementProps } from "./SortTabElement";
 import {
   ArchiveBoxArrowDownIcon,
   ChatBubbleBottomCenterTextIcon,
@@ -8,10 +9,14 @@ import {
   AdjustmentsHorizontalIcon,
   Bars3Icon,
 } from "@heroicons/react/24/outline";
-import SortTabElement, { SortTabElementProps } from "./SortTabElement";
+
+interface SortTabProps {
+  onItemClick: (title: string) => void;
+  selectedItem?: string;
+}
 
 const menuItems: Array<SortTabElementProps> = [
-  { title: "", icon: Bars3Icon },
+  { title: " ", icon: Bars3Icon },
   { title: "All Chats", icon: ChatBubbleLeftRightIcon },
   { title: "Unread", icon: ChatBubbleBottomCenterTextIcon },
   { title: "Private", icon: UserCircleIcon },
@@ -20,23 +25,17 @@ const menuItems: Array<SortTabElementProps> = [
   { title: "Edit", icon: AdjustmentsHorizontalIcon },
 ];
 
-const SortTab = () => {
-  const [selectedItem, setSelectedItem] = useState<string>();
-
-  const handleItemClick = (title: string) => {
-    setSelectedItem(title);
-  };
-
+const SortTab: React.FC<SortTabProps> = ({ onItemClick, selectedItem }) => {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       {menuItems.map((item) => (
         <div
-          className="cursor-pointer"
+          className="cursor-pointer h-[70px]"
           key={item.title}
-          onClick={() => handleItemClick(item.title)}
+          onClick={() => onItemClick(item.title)}
           style={{
             backgroundColor:
-              selectedItem === item.title ? "#e69b00" : "transparent",
+              selectedItem === item.title ? "#529999" : "transparent",
           }}
         >
           <SortTabElement {...item} />

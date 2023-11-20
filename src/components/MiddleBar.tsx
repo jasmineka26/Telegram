@@ -2,20 +2,39 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import Profile from "./Profile";
 
-interface MiddleBarProps {}
+interface MiddleBarProps {
+  contacts: Array<{
+    image: string;
+    name: string;
+    lastMessage: string;
+    group: string;
+  }>;
+}
 
 interface MiddleBarState {}
 
 class MiddleBar extends React.Component<MiddleBarProps, MiddleBarState> {
-  state = {};
   render() {
+    const { contacts } = this.props;
+
     return (
-      <div>
-        <div>
+      <div className="flex flex-col">
+        <div className="m-2 pb-[13px]">
           <SearchBar />
         </div>
         <div>
-          <Profile imageAddress="/Pictures/Screenshot_20230819_025227.png"/>
+          {contacts.map((chat, index) => (
+            <div>
+              <div className="h-[70px] w-full p-2 hover:bg-[#529999]">
+                <Profile
+                  key={index}
+                  imageAddress={chat.image}
+                  profileName={chat.name}
+                  lastMessage={chat.lastMessage}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     );
