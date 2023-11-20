@@ -1,14 +1,10 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import Profile from "./Profile";
+import Contact from "../models/contact";
 
 interface MiddleBarProps {
-  contacts: Array<{
-    image: string;
-    name: string;
-    lastMessage: string;
-    group: string;
-  }>;
+  contacts: Array<Contact>;
 }
 
 interface MiddleBarState {}
@@ -23,14 +19,14 @@ class MiddleBar extends React.Component<MiddleBarProps, MiddleBarState> {
           <SearchBar />
         </div>
         <div>
-          {contacts.map((chat, index) => (
-            <div>
+          {contacts.map((c, index) => (
+            <div key={index}>
               <div className="h-[70px] w-full p-2 hover:bg-[#529999]">
                 <Profile
-                  key={index}
-                  imageAddress={chat.image}
-                  profileName={chat.name}
-                  lastMessage={chat.lastMessage}
+                  image={c.image}
+                  name={c.name}
+                  lastMessage={c.lastMessage}
+                  unread={c.unread}
                 />
               </div>
             </div>

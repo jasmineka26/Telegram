@@ -1,44 +1,53 @@
-export const allChats = [
+import Contact from "./models/contact";
+
+export const allChats: Array<Contact> = [
   {
     image: "/Pictures/Screenshot_20230819_025227.png",
-    name: "amir mehdipoor",
-    lastMessage: "22222222222222222222",
-    group:"All Chats"||"Private"
+    name: "amir",
+    lastMessage: "aaaaaaaaaaaaaaaaaa",
+    group: "Private",
+    unread: 3,
   },
   {
     image: "/Pictures/Screenshot_20230819_025227.png",
-    name: "amir mehdipoor",
-    lastMessage: "111111ejnk.dfbaj,hdmnm",
-    group:"Channels"
+    name: "جک های خفن",
+    lastMessage: "bbbbbbbbbbbbbbbbbb",
+    group: "Channels",
+    unread: 0,
   },
   {
     image: "/Pictures/Screenshot_20230819_025227.png",
-    name: "amir mehdipoor",
-    lastMessage: "1111111111fjabjhvnskdjvn",
-    group:"Group"
+    name: "دهه نودیا",
+    lastMessage: "1111111111111111111111",
+    group: "Group",
+    unread: 25,
   },
   {
     image: "/Pictures/Screenshot_20230819_025227.png",
-    name: "amir mehdipoor",
+    name: "یاسمن",
+    lastMessage: "aaaaaaaaaaaaaaaaaa",
+    group: "Private",
+    unread: 0,
+  },
+  {
+    image: "/Pictures/Screenshot_20230819_025227.png",
+    name: "آمارکاربردی 2",
     lastMessage: "1111111111111111111",
-    group:"Private"
+    group: "Group",
+    unread: 0,
   },
   {
     image: "/Pictures/Screenshot_20230819_025227.png",
-    name: "amir mehdipoor",
-    lastMessage: "1111111111111111111",
-    group:"Group"
+    name: "VPN رایگان",
+    lastMessage: "bbbbbbbbbbbbbbbbbbbb",
+    group: "Channels",
+    unread: 96,
   },
   {
     image: "/Pictures/Screenshot_20230819_025227.png",
-    name: "amir mehdipoor",
-    lastMessage: "1111111111111111111",
-    group:"Channels"
-  },
-  {
-    image: "/Pictures/Screenshot_20230819_025227.png",
-    name: "amir mehdipoor",
-    lastMessage: "1111111111111111111",
-    group:"Private"
+    name: "naci",
+    lastMessage: "aaaaaaaaaaaaaaaaaaaa",
+    group: "Private",
+    unread: 0,
   },
 ];
